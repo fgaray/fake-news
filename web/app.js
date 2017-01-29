@@ -55,6 +55,9 @@ var fakeNew = new mongoose.Schema({
   fuente: String      // facebook, whatsapp, etc
 });
 
+
+var FakeNew = mongoose.model('FakeNew', fakeNew);
+
 // end schemas
 
 var app = express();
@@ -67,12 +70,38 @@ app.use(express.static('public'))
 
 //end config app
 
+
+
+
+
+
+
 app.get('/', function (req, res) {
     res.render("index.html", {saludo: "mundo"});
 });
 
 app.get("/n/:string", function(req, res, hash){
-  res.render("noticia.html");
+  FakeNew.findOne({ "hash": hash}, function(err, noticia){
+    if(err){
+      // 404 de las noticias, ofrecemos crear una nueva noticia si es que no se
+      // encuentra la que se está buscando
+      res.status(500);
+      res.render("500.html");
+    }else{
+      if(noticia === null){
+        res.render("404Noticia.html");
+      }else{
+        res.render("noticia.html");
+      }
+    }
+  });
+});
+
+
+//debe ir al final de todo. 404 general
+app.get("*", function(req, res){
+  res.status(404);
+  res.render("404.html");
 });
 
 
