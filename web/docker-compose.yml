@@ -3,7 +3,7 @@ services:
   web:
     build: .
     volumes:
-     - /uploads:/web/uploads
+     - /uploads:/web/public/uploads
      - $PWD:/web
     links:
       - mongo
