@@ -1,6 +1,7 @@
 var express = require("express");
 var mongoose = require ("mongoose");
 var mustacheExpress = require('mustache-express');
+var mustache = require('mustache');
 var multer  = require('multer');
 
 
@@ -83,7 +84,18 @@ app.use(express.static('public'))
 
 
 app.get('/', function (req, res) {
-    res.render("index.html", {prueba: "prueba" });
+    var masVisitadas = "";
+        recientes = "";
+        templateLista = "<li> {{titulo}} </li>";
+
+    for (i = 1; i < 5; i++) {
+        masVisitadas += mustache.render(templateLista, {titulo: "visitadas " + i} );
+        recientes    += mustache.render(templateLista, {titulo: "recientes " + i} );
+    }
+    res.render("index.html", {
+        noticiasVisitadas: masVisitadas,
+        noticiasRecientes: recientes,
+    });
 });
 
 app.get("/n/:string", function(req, res, hash){
