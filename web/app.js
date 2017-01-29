@@ -46,6 +46,11 @@ var fakeNew = new mongoose.Schema({
     }],
     favor: Boolean    // true si la fuente es a favor, false si la fuente es en contra.
   }],
+  reportes: [
+    { ip: String
+    , mensaje: String
+    }
+  ],
   ipSubida: String,
   fuente: String      // facebook, whatsapp, etc
 });
