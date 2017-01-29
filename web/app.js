@@ -83,7 +83,30 @@ app.use(express.static('public'))
 
 
 app.get('/', function (req, res) {
-    res.render("index.html", {saludo: "mundo"});
+    var content = `
+        <div id="index" class="container">
+            <div class="row">
+              <div class="col-md-6 contenedor-lista">
+                  <h3 class="titulo-recientes">Más visitadas</h3>
+
+                  <ul class="lista">
+                      <li>Noticia 1</li>
+                      <li>Noticia 2</li>
+                      <li>Noticia 3</li>
+                  </ul> 
+              </div>
+              <div class="col-md-6 contenedor-lista">
+                  <h3 class="titulo-recientes">Agregadas recientemente</h3>
+                  <ul class="lista">
+                      <li>Noticia 1</li>
+                      <li>Noticia 2</li>
+                      <li>Noticia 3</li>
+                  </ul> 
+              </div>
+            </div>
+        </div><!-- /.container -->
+    `;
+    res.render("template.html", {content: content});
 });
 
 app.get("/n/:string", function(req, res, hash){
