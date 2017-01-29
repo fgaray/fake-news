@@ -58,6 +58,7 @@ var app = express();
 app.engine('html', mustacheExpress());
 app.set('view engine', 'mustache');
 app.set('views', __dirname + '/views');
+app.use(express.static('public'))
 
 //end config app
 
