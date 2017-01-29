@@ -1,6 +1,12 @@
 var express = require("express");
 var mongoose = require ("mongoose");
 var mustacheExpress = require('mustache-express');
+var multer  = require('multer');
+
+
+
+var upload = multer({ dest: 'uploads/', limits: {fileSize: 5} });
+
 
 // databse config
 
@@ -95,6 +101,23 @@ app.get("/n/:string", function(req, res, hash){
       }
     }
   });
+});
+
+
+app.get("/nueva", function(req, res){
+  res.render("nuevaNoticia.html");
+});
+
+//solo se permiten un maximo de 5 fotos por noticia
+app.post("/nueva", upload.array('photos', 5), function(req, res){
+  var files = req.files;  // fields de las imagenes
+  var body = req.body;    // fields de texto
+
+  for(var i = 0; i < files.length; i++){
+    var file = files;
+    console.log(file);
+  }
+
 });
 
 

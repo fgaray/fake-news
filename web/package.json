@@ -12,5 +12,6 @@
   { "express" : "*"
     , "mongoose": "*"
     , "mustache-express": "*"
+    , "multer": "*"
   }
 }
