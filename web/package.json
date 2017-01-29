@@ -11,5 +11,6 @@
   "dependencies" :
   { "express" : "*"
     , "mongoose": "*"
+    , "mustache-express": "*"
   }
 }

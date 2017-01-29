@@ -1,5 +1,6 @@
 var express = require("express");
 var mongoose = require ("mongoose");
+var mustacheExpress = require('mustache-express');
 
 // databse config
 
@@ -31,8 +32,9 @@ var fakeNew = new mongoose.Schema({
   titulo: String,
   hash: String,       // hash para identificar a la noticia sin tener que publicar el id interno de la DB, hash(texto)
   imagenes: [{
-    imagen: String,   // En base 64
-    texto: String     // OCR
+    imagen: String,     // En base 64
+    amazonURL: String,  // TODO: Subir las imagenes a Amazon
+    texto: String       // OCR
   }],
   fuentes: [{
     nombre: String,
@@ -53,8 +55,14 @@ var fakeNew = new mongoose.Schema({
 var app = express();
 
 
+app.engine('html', mustacheExpress());
+app.set('view engine', 'mustache');
+app.set('views', __dirname + '/views');
+
+//end config app
+
 app.get('/', function (req, res) {
-    res.send("hola mundo");
+    res.render("index.html", {saludo: "mundo"});
 });
 
 
