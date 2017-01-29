@@ -48,8 +48,10 @@
 }
 
 .intro-contenido{
-  font-size: 1.2em; 
-  line-height: 120%;
+    font-size: 1.2em; 
+    line-height: 120%;
+    text-align: justify;
+    text-justify: inter-word;
 }
 
 
