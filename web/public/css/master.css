@@ -27,3 +27,37 @@
 }
 
 
+.contenedor-saludos{
+}
+
+.intro-contenedor{
+    margin-top: 1.8em;
+    margin-bottom: 1.8em;
+}
+
+
+.intro-figura{
+    font-size: 75px;
+    text-align: center;
+}
+
+.intro-titulo{
+    font-size: 2.0em;
+    margin: 10px;
+    text-align: center;
+}
+
+.intro-contenido{
+  font-size: 1.2em; 
+  line-height: 120%;
+}
+
+
+
+.texto-contenido{
+  font-size: 1.2em; 
+  line-height: 120%;
+  margin: 10px;
+}
+
+
