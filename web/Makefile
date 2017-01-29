@@ -1,5 +1,6 @@
 run:
-	node main.js
+	npm install
+	nodejs main.js
 
 build:
 	docker-compose build

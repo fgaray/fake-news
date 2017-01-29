@@ -1,5 +1,44 @@
 {{>header}}
 
-  Hola {{ saludo }}
+
+
+
+<div class="panel panel-warning" style="margin-top: 10px;">
+  <div class="panel-heading">
+    ¡Advertencia!
+  </div>
+  <div class="panel-body">
+    Antes de agregar una posible noticia falsa, utiliza el buscador para ver si
+    alguien ya la agregó.
+
+    Si tienes dudas revisa las preguntas frecuentes.
+
+    Evita poner información personal en las imágenes, puedes utilizar un editor
+    de imágenes para borrar los nombres.
+  </div>
+</div>
+
+
+
+<h2>
+  Nueva Noticia Falsa
+</h2>
+
+<form enctype="multipart/form-data">
+  <div class="form-group">
+    <label for="titulo">Título de la noticia:</label>
+    <input type="titulo" class="form-control" id="titulo">
+  </div>
+
+  <div class="form-group">
+    <label for="fuente">Obtenida desde (Facebook, WhatsApp):</label>
+    <input type="fuente" class="form-control" id="fuente">
+  </div>
+
+
+
+  <input type="submit" value="Subir">
+</form>
+
 
 {{>footer}}

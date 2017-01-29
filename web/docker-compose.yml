@@ -4,6 +4,7 @@ services:
     build: .
     volumes:
      - /uploads:/web/uploads
+     - $PWD:/web
     links:
       - mongo
       - memcached
