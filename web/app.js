@@ -40,7 +40,8 @@ var fakeNew = new mongoose.Schema({
     votosNegativos: Number,
     ipVoto: [{
       ip: String
-    }]
+    }],
+    favor: Boolean    // true si la fuente es a favor, false si la fuente es en contra.
   }],
   ipSubida: String,
   fuente: String      // facebook, whatsapp, etc
