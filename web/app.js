@@ -28,7 +28,22 @@ mongoose.connect(uristring, function (err, res) {
 
 
 var fakeNew = new mongoose.Schema({
-
+  titulo: String,
+  imagenes: [{
+    imagen: String,   // En base 64
+    texto: String     // OCR
+  }],
+  fuentes: [{
+    nombre: String,
+    url: String,
+    votosPositivos: Number,
+    votosNegativos: Number,
+    ipVoto: [{
+      ip: String
+    }]
+  }],
+  ipSubida: String,
+  fuente: String      // facebook, whatsapp, etc
 });
 
 // end schemas
