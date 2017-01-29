@@ -71,5 +71,9 @@ app.get('/', function (req, res) {
     res.render("index.html", {saludo: "mundo"});
 });
 
+app.get("/n/:string", function(req, res, hash){
+  res.render("noticia.html");
+});
+
 
 module.exports = app;
