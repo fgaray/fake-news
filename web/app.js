@@ -29,6 +29,7 @@ mongoose.connect(uristring, function (err, res) {
 
 var fakeNew = new mongoose.Schema({
   titulo: String,
+  hash: String,       // hash para identificar a la noticia sin tener que publicar el id interno de la DB, hash(texto)
   imagenes: [{
     imagen: String,   // En base 64
     texto: String     // OCR
