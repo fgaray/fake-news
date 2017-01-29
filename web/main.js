@@ -12,6 +12,8 @@ app.set("port", port);
 //create http server
 var server = http.createServer(app);
 
+console.log("Running...");
+
 //listen on provided ports
 server.listen(port);
 
@@ -20,3 +22,5 @@ server.listen(port);
 
 //start listening on port
 //server.on("listening", onListening);
+
+

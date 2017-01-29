@@ -2,18 +2,17 @@ var express = require("express");
 var mongoose = require ("mongoose");
 var mustacheExpress = require('mustache-express');
 var multer  = require('multer');
+var Memcached = require('memcached');
+var exec = require('child_process').exec;
 
 
-
+var memcached = new Memcached('web_memcached_1:11211');
 var upload = multer({ dest: 'uploads/', limits: {fileSize: 5} });
 
 
 // databse config
 
-var uristring =
-  process.env.MONGOLAB_URI ||
-  process.env.MONGOHQ_URL ||
-  'mongodb://localhost/fake-news';
+var uristring = 'mongodb://web_mongo_1/fake-news';
 
 var theport = process.env.PORT || 5000;
 
@@ -40,7 +39,8 @@ var fakeNew = new mongoose.Schema({
   imagenes: [{
     imagen: String,     // En base 64
     amazonURL: String,  // TODO: Subir las imagenes a Amazon
-    texto: String       // OCR
+    texto: String,       // OCR
+    salidaTesseract: String // para debug
   }],
   fuentes: [{
     nombre: String,
