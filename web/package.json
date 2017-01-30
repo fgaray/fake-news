@@ -15,5 +15,6 @@
     , "multer": "*"
     , "memcached": "*"
     , "formidable": "*"
+    , "body-parser": "*"
   }
 }

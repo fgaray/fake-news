@@ -5,6 +5,7 @@ var mustache = require('mustache');
 var Memcached = require('memcached');
 var exec = require('child_process').exec;
 var formidable = require('formidable');
+var bodyParser = require('body-parser');
 var fs = require("fs");
 
 
@@ -79,6 +80,9 @@ app.engine('html', mustacheExpress());
 app.set('view engine', 'mustache');
 app.set('views', __dirname + '/views');
 app.use(express.static('public'))
+app.use(bodyParser.urlencoded());
+app.use(bodyParser.json());
+
 
 //end config app
 
@@ -128,12 +132,17 @@ app.get("/nueva", function(req, res){
 //solo se permiten un maximo de 5 fotos por noticia
 app.post("/nueva", function(req, res){
   var form = new formidable.IncomingForm()
+  form.encoding = 'utf-8';
+
+
   form.parse(req, function(err, fields, files){
     res.send("Listo");
   });
 
 
+
   form.on('end', function(fields, files){
+
     /* Temporary location of our uploaded file */
     var temp_path = this.openedFiles[0].path;
     /* The file name of the uploaded file */
@@ -158,12 +167,14 @@ app.post("/nueva", function(req, res){
                   amazonURL: "",
                   texto: stdout,
                   salidaTesseract: stderr 
-                }]
+                }],
+                ipSubida: req.headers['x-forwarded-for']
               });
 
 
               fn.save(function(err){
-                // AYY
+                console.log(files);
+                console.log(fields);
               });
 
             });
