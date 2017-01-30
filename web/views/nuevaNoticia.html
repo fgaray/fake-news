@@ -24,7 +24,7 @@
   Nueva Noticia Falsa
 </h2>
 
-<form enctype="multipart/form-data">
+<form enctype="multipart/form-data", method="post">
   <div class="form-group">
     <label for="titulo">Título de la noticia:</label>
     <input type="titulo" class="form-control" id="titulo">
@@ -35,6 +35,9 @@
     <input type="fuente" class="form-control" id="fuente">
   </div>
 
+  <label for="fileupload">Imágen de la noticia:</label>
+  <input id="fileupload" type="file" name="files[]" data-url="/upload" multiple>
+  <script>$('#fileupload').fileupload({ dataType: 'json' })</script>
 
   <input type="submit" value="Subir">
 </form>

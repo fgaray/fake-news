@@ -4,6 +4,8 @@ var mustacheExpress = require('mustache-express');
 var mustache = require('mustache');
 var Memcached = require('memcached');
 var exec = require('child_process').exec;
+var formidable = require('formidable');
+var fs = require("fs");
 
 
 
@@ -125,6 +127,54 @@ app.get("/nueva", function(req, res){
 
 //solo se permiten un maximo de 5 fotos por noticia
 app.post("/nueva", function(req, res){
+  var form = new formidable.IncomingForm()
+  form.parse(req, function(err, fields, files){
+    res.send("Listo");
+  });
+
+
+  form.on('end', function(fields, files){
+    /* Temporary location of our uploaded file */
+    var temp_path = this.openedFiles[0].path;
+    /* The file name of the uploaded file */
+    var file_name = this.openedFiles[0].name;
+    /* Location where we want to copy the uploaded file */
+    var new_location = './public/uploads/';
+
+    fs.readFile(temp_path, function(err1, data) {
+      fs.writeFile(new_location + file_name, data, function(err2) {
+        fs.unlink(temp_path, function(err3) {
+          if (err1 || err2 || err3) {
+            console.error(err1);
+            console.error(err2);
+            console.error(err3);
+          }else{
+            //hacemos el reconocimiento de texto
+
+            exec("tesseract " + new_location + file_name + " stdout", function(error, stdout, stderr){
+              var fn = FakeNew({
+                imagenes: [{
+                  imagen: new_location + file_name,
+                  amazonURL: "",
+                  texto: stdout,
+                  salidaTesseract: stderr 
+                }]
+              });
+
+
+              fn.save(function(err){
+                // AYY
+              });
+
+            });
+
+          }
+        });
+      });
+    });
+
+  });
+
 
 });
 

@@ -1,4 +1,5 @@
 run:
+	sleep 2s
 	npm install
 	nodejs main.js
 

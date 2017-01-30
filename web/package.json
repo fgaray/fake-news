@@ -14,7 +14,6 @@
     , "mustache-express": "*"
     , "multer": "*"
     , "memcached": "*"
-    , "jquery-file-upload-middleware": "*"
-    , "body-parser": "*"
+    , "formidable": "*"
   }
 }
