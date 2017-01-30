@@ -48,8 +48,10 @@
 }
 
 .intro-contenido{
-  font-size: 1.2em; 
-  line-height: 120%;
+    font-size: 1.2em; 
+    line-height: 120%;
+    text-align: justify;
+    text-justify: inter-word;
 }
 
 
@@ -61,3 +63,28 @@
 }
 
 
+
+.noticia-imagen img{
+    height: 400px;
+}
+.noticia-titulo{
+    margin-top: 50px;
+    margin-bottom: 100px;
+    text-align: center;
+}
+
+.noticias-estadisticas .titulo{
+}
+
+.noticias-estadisticas .lista-est{
+    list-style-type: none;
+    padding-left: 0px;
+}
+
+.noticias-estadisticas .lista-est li{
+    border-left: 5px solid #FFAA00;
+    padding: .4em .4em .4em .8em;
+    transition: all .3s ease-in-out;
+    margin-top: 0.4em;
+    margin-bottom: 0.4em;
+}
