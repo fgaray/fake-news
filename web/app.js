@@ -98,6 +98,14 @@ app.get('/', function (req, res) {
     });
 });
 
+// TODO temporal, para poder ver la pagina sin tener noticias 
+app.get('/noticia', function (req, res) {
+
+    res.render("noticia.html", {
+        titulo: "Noticia título",
+    });
+});
+
 app.get("/n/:string", function(req, res, hash){
   FakeNew.findOne({ "hash": hash}, function(err, noticia){
     if(err){
