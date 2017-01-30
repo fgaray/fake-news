@@ -3,94 +3,125 @@
 <h3 class="noticia-titulo">{{titulo}}</h3>
 
 <div class="noticia-imagenes">
+
     <div class="row">
-        <div class="col-md-4">
-            <div class="noticia-imagen">
-                <img src="/images/image1.jpg" alt="">
-            </div>
-        </div>
-        <div class="col-md-4">
-            <h4>Imagen transformada en texto</h4>
-            <div class="noticia-imagen">
-                <div>
-                    Today
-        
-                    Amigos, recibimos un comunicado de
-                    último minuto, de la 'lº compañía de
-                    bombero, de metropolitano Sur, que
-                    lamentablemente existe un foco de
-                    incendio en las torres de alta tensión,
-                    que comprende de la comuna de Parral
-                    hacía el norte, y nos avisan que en
-                    cualquier momento quedaría sin luz todo
-                    el área metropolitana Y nos sugieren
-                    que Preparemos linternas, cargar
-                    celulares, pilas recargables, para
-                    artefactos portátiles. Y esto, porque
-                    están corriendo grave peligro las torres
-                    de alta tensión que abastece de energía
-                    eléctrica a gran parte del Área
-                    metropolitana hacia el sun Por favor
-                    avisar a sus amigos y familiares. Es
-                    urgente.
+        <div class="col-md-8 carousel slide" data-ride="carousel" id="carruselImagenes">
+            <!--corrusel-->
+
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li class="indicadorCarrusel active" data-target="#carruselImagenes" data-slide-to="0" ></li>
+                <li class="indicadorCarrusel" data-target="#carruselImagenes" data-slide-to="1"></li>
+            </ol>
+
+            <div class="carousel-inner" role="listbox">
+                <!--corrusel contenido-->
+                <div class="item active">
+                    <div class="row">
+                        <div class="col-md-6 noticia-imagen">
+                            <img src="/images/image1.jpg" alt="">
+                        </div>
+                        <div class="col-md-6">
+                            <h4>Imagen transformada en texto</h4>
+                            <div class="noticia-texto">
+                                Today
+                    
+                                Amigos, recibimos un comunicado de
+                                último minuto, de la 'lº compañía de
+                                bombero, de metropolitano Sur, que
+                                lamentablemente existe un foco de
+                                incendio en las torres de alta tensión,
+                                que comprende de la comuna de Parral
+                                hacía el norte, y nos avisan que en
+                                cualquier momento quedaría sin luz todo
+                                el área metropolitana Y nos sugieren
+                                que Preparemos linternas, cargar
+                                celulares, pilas recargables, para
+                                artefactos portátiles. Y esto, porque
+                                están corriendo grave peligro las torres
+                                de alta tensión que abastece de energía
+                                eléctrica a gran parte del Área
+                                metropolitana hacia el sun Por favor
+                                avisar a sus amigos y familiares. Es
+                                urgente.
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
+                <div class="item ">
+                    <div class="row">
+                        <div class="col-md-6 noticia-imagen">
+                            <img src="/images/image1.jpg" alt="">
+                        </div>
+                        <div class="col-md-6">
+                            <h4>Imagen transformada en texto</h4>
+                            <div class="noticia-texto">
+                                Today
+                    
+                                Amigos, recibimos un comunicado de
+                                último minuto, de la 'lº compañía de
+                                bombero, de metropolitano Sur, que
+                                lamentablemente existe un foco de
+                                incendio en las torres de alta tensión,
+                                que comprende de la comuna de Parral
+                                hacía el norte, y nos avisan que en
+                                cualquier momento quedaría sin luz todo
+                                el área metropolitana Y nos sugieren
+                                que Preparemos linternas, cargar
+                                celulares, pilas recargables, para
+                                artefactos portátiles. Y esto, porque
+                                están corriendo grave peligro las torres
+                                de alta tensión que abastece de energía
+                                eléctrica a gran parte del Área
+                                metropolitana hacia el sun Por favor
+                                avisar a sus amigos y familiares. Es
+                                urgente.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- carousel contenido -->
+
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#carruselImagenes" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Anterior</span>
+            </a>
+            <a class="right carousel-control" href="#carruselImagenes" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Siguiente</span>
+            </a>
         </div>
+
+        <!--estadisticas noticia-->
         <div class="col-md-4">
-            <div style="">
-                <button type="button" class="btn btn-primary navbar-btn">Nueva fuente</button>
-                <button type="button" class="btn btn-primary navbar-btn">Reportar</button>
-            </div>
+            <button type="button" class="btn btn-primary navbar-btn">Nueva fuente</button>
+            <button type="button" class="btn btn-primary navbar-btn">Reportar</button>
             <div class="noticias-estadisticas">
                 <h4 class="titulo">Estadísticas</h4>
-                <ul class="lista-est">
-                    <li>Número de visitas: </li>
-                    <li>Fecha agregado: </li>
-                    <li>Porcentaje de fuentes a favor:</li>
-                    <li>Último movimiento:</li>
-                </ul>
+                <table class="lista-est">
+                    <tr>
+                        <th class="labelEst" >Número de visitas</th>
+                        <th class="valor" >999</th>
+                    </tr>
+                    <tr>
+                        <th class="labelEst">Fecha ingresado</th>
+                        <th class="valor">10/01/2017</th>
+                    </tr>
+                    <tr>
+                        <th class="labelEst">Porcentaje de fuentes a favor</th>
+                        <th class="valor">50%</th>
+                    </tr>
+                    <tr>
+                        <th class="labelEst">Último movimiento</th>
+                        <th class="valor">22/01/2017</th>
+                    </tr>
+                </table>
             </div>
         </div>
     </div>
 
 
-
-
-
-    <div class="row">
-        <div class="col-md-4">
-            <div class="noticia-imagen">
-                <img src="/images/image1.jpg" alt="">
-            </div>
-        </div>
-        <div class="col-md-4">
-            <h4>Imagen transformada en texto</h4>
-            <div class="noticia-imagen">
-                <div>
-                    Today
-        
-                    Amigos, recibimos un comunicado de
-                    último minuto, de la 'lº compañía de
-                    bombero, de metropolitano Sur, que
-                    lamentablemente existe un foco de
-                    incendio en las torres de alta tensión,
-                    que comprende de la comuna de Parral
-                    hacía el norte, y nos avisan que en
-                    cualquier momento quedaría sin luz todo
-                    el área metropolitana Y nos sugieren
-                    que Preparemos linternas, cargar
-                    celulares, pilas recargables, para
-                    artefactos portátiles. Y esto, porque
-                    están corriendo grave peligro las torres
-                    de alta tensión que abastece de energía
-                    eléctrica a gran parte del Área
-                    metropolitana hacia el sun Por favor
-                    avisar a sus amigos y familiares. Es
-                    urgente.
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
 
 

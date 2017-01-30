@@ -67,6 +67,13 @@
 .noticia-imagen img{
     height: 400px;
 }
+
+.noticia-texto {
+    padding-right: 50px;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
 .noticia-titulo{
     margin-top: 50px;
     margin-bottom: 100px;
@@ -76,15 +83,36 @@
 .noticias-estadisticas .titulo{
 }
 
-.noticias-estadisticas .lista-est{
-    list-style-type: none;
-    padding-left: 0px;
+
+.noticias-estadisticas .lista-est {
+    border-spacing: 10px;
+    border-collapse: separate;
+
 }
 
-.noticias-estadisticas .lista-est li{
+
+.noticias-estadisticas .lista-est .valor{
+    font-weight:normal;
+}
+.noticias-estadisticas .lista-est .labelEst{
     border-left: 5px solid #FFAA00;
     padding: .4em .4em .4em .8em;
     transition: all .3s ease-in-out;
     margin-top: 0.4em;
     margin-bottom: 0.4em;
+    font-weight:normal;
+}
+
+.indicadorCarrusel{
+    background-color: rgba(51, 122, 183, 0.3)!important;
+    border: 1px solid #337ab7 !important;
+}
+
+.indicadorCarrusel.active{
+    background-color: #337ab7!important;
+}
+
+/*sobreescribiendo la definicion de bootstrap*/
+.carousel-indicators {
+    bottom: -10px !important;
 }
